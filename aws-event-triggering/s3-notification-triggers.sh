@@ -1,8 +1,17 @@
 #!/bin/bash
 
-# set -x enable debugging mode. 
+##############################################################
+# Author: Ashna
+# Date: 9-21-2023
+# This script triggers lambda function and sent notification to the user using SNS automatically whenever new file will be uploaded to S3 bucket
+# All this commands are aws cli commands
+###############################################################
+
+# set -x  --> enable debugging mode. 
 set -x
 
+
+# below command will fetch the aws account id
 # Store the AWS account ID in a variable. It retrieve the AWS account ID associated with the currently authenticated AWS user
 aws_account_id=$(aws sts get-caller-identity --query 'Account' --output text)
 
